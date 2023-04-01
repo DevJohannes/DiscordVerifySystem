@@ -6,7 +6,7 @@ import os
 # Config:
 
 debug_guilds=1084482528842366976
-token="MTA4NDQ4MjkwODYwNzIyMTgyMA.Gp6Ce9.cxLw7Nkmr_5VHQrytMr1sr0H2kKVVcE921SH10"
+token=""
 
 
 status = discord.Status.dnd
