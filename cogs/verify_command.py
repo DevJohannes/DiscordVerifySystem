@@ -58,13 +58,17 @@ class VerifyModal(discord.ui.Modal):
             )
         
     async def callback(self, interaction):
-    
-        if int(self.children[0].value) == self.result:
-            await interaction.response.send_message("Du hast die Aufgabe richtig beantwortet")
-            role = interaction.guild.get_role(1091780450059558972)
-            await interaction.user.add_roles(role)
-            
-        elif int(self.children[0].value) != self.result:
-            await interaction.response.send_message("Du hast die Aufgabe nicht richtig beantwortet")
+        try:
+            if int(self.children[0].value) == self.result:
+                await interaction.response.send_message("Du hast die Aufgabe richtig beantwortet", ephemeral=True)
+                role = interaction.guild.get_role(1091780450059558972)
+                await interaction.user.add_roles(role)
+                
+            elif int(self.children[0].value) != self.result:
+                await interaction.response.send_message("Du hast die Aufgabe nicht richtig beantwortet", ephemeral=True)
+
+                
+        except:
+            pass
             
         
